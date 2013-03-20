@@ -83,8 +83,9 @@ As there is no easy way to modify the treshold, we will need to modify the sourc
 * If the compiling is succesful you should have a directory named "bin-release" with the file in it "player.swf".
 
 
-[b]De un lado, el player normal. Del otro, el recompilado[/b]
-!(http://i.imgur.com/CRMGc8I.jpg)
+Side by side comparison
+------------------------
+![side by side comparison](http://i.imgur.com/CRMGc8I.jpg)
 [i](el "width" y "bitrate" de la captura no corresponde con la guía, pero me dí cuenta después de escribir la guía; sepan disculpar :P )[/i]
 
 

@@ -77,10 +77,7 @@ As there is no easy way to modify the treshold, we will need to modify the sourc
 	
 	var drf:Number = 0;
 
-  [i]Insisto en que esta es una solución muy rústica, porque lo que hacemos transformar esa variable en una constante. Seguramente a Uds. se les pueden ocurrir mejores maneras de lidiar con este problema[/i] :)
-
-
-COMPILAMOS:
+**Compile**:
 [list]
 [li]Desde la consola, parados en la carpeta raíz del código, ejecutamos:
    [/li][/list][code]ant -buildfile build\build.xml[/code][list][list][/li]

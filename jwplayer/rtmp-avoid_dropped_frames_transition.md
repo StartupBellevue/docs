@@ -38,7 +38,7 @@ The idea is to avoid presenting a video that cannot be supported the computer (o
 
 What's wrong with this?
 -------------------------
-The problem is, in my humble opinion, that the tresholds are low and there is no way to change them (as it can be done with FLOWPLAYER: http://flash.flowplayer.org/plugins/streaming/bwcheck.html ).
+The problem is, in my humble opinion, that the tresholds are low and there is no way to change them (as it can be done with [FLOWPLAYER](http://flash.flowplayer.org/plugins/streaming/bwcheck.html ) .
 
 Some things that can get you to lose 10fps:
 * Popups
@@ -92,7 +92,7 @@ Side by side comparison (L: Old; R: New)
 Notes
 -----------------------------
 * It is common to have to make some changes in the code for the FLEX or ANT path; it depends on your system.
-* If you do not wan't to compile the code, you can download the SWf [here](http://tinyurl.com/cd66yu3)
+* If you do not wan't to compile the code, you can download the SWF [here](http://tinyurl.com/cd66yu3)
 * I remember having read somwhere that this "dropped frame" transition logic would be deprecated in JW6, but im not sure.
 
 Useful links

@@ -61,7 +61,8 @@ As there is no easy way to modify the treshold, we will need to modify the sourc
 * [JW Player 5.10 Source Code](http://developer.longtailvideo.com/trac/browser/tags/mediaplayer-5.10)
 
 
-**Editing**:
+### Editing :
+
 In the file "src/com/longtailvideo/jwplayer/media/RTMPMediaProvider.as", around line 214, we should find:
 
     try {
@@ -69,18 +70,23 @@ In the file "src/com/longtailvideo/jwplayer/media/RTMPMediaProvider.as", around 
     var drf:Number = _stream.info.droppedFrames;
     var stt:String = state;
 
-* Replace this:
+Replace this:
 
     var drf:Number = _stream.info.droppedFrames;
-
-* For this:
+   
+For this:
 
     var drf:Number = 0;
 
-**Compile**:
-* From the root folder of the source code:
+### Compiling :
+
+From the root folder of the source code:
+
     ant -buildfile build\build.xml
-* If the compiling is succesful you should have a directory named "bin-release" with the file in it "player.swf".
+
+If the compiling is succesful you should have a directory named "bin-release" with the file in it "player.swf".
+
+
 
 
 Side by side comparison (L: Old; R: New)

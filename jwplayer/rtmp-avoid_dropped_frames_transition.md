@@ -63,19 +63,19 @@ As there is no easy way to modify the treshold, we will need to modify the sourc
 
 **Editing**:
 * In the file "src/com/longtailvideo/jwplayer/media/RTMPMediaProvider.as", around line 214, we should find:
-	
-	try {
-	  var bwd:Number = Math.round(_stream.info.maxBytesPerSecond * 8 / 1024);
-		var drf:Number = _stream.info.droppedFrames;
-		var stt:String = state;
+
+    try {
+    var bwd:Number = Math.round(_stream.info.maxBytesPerSecond * 8 / 1024);
+    var drf:Number = _stream.info.droppedFrames;
+    var stt:String = state;
 
 * Replace this:
 
-	var drf:Number = _stream.info.droppedFrames;
+    var drf:Number = _stream.info.droppedFrames;
 
 * For this:
-	
-	var drf:Number = 0;
+
+    var drf:Number = 0;
 
 **Compile**:
 [list]
@@ -97,9 +97,8 @@ As there is no easy way to modify the treshold, we will need to modify the sourc
 [li]Si mal no recuerdo haber leído en algún foro de Longtail, esta funcionalidad se iba a depreciar con JW6; pero no sé que pasó finalmente.[/li]
 [/list]
 
-[b]Links interesantes[/b]
-[list]
-[li][url=http://www.longtailvideo.com/support/jw-player/jw-player-for-flash-v5/12535/video-delivery-rtmp-streaming#dynamicstreaming]http://www.longtailvideo.com/support/jw-player/jw-player-for-flash-v5/12535/video-delivery-rtmp-streaming#dynamicstreaming[/url][/li]
-[li][url=http://www.longtailvideo.com/addons/plugins/123/QualityMonitor]http://www.longtailvideo.com/addons/plugins/123/QualityMonitor[/url][/li]
-[li][url=http://www.longtailvideo.com/support/addons/quality-monitor/14627/quality-monitor-plugin-users-guide]http://www.longtailvideo.com/support/addons/quality-monitor/14627/quality-monitor-plugin-users-guide[/url][/li]
-[/list][/list]
+Usefull links
+--------------
+* http://www.longtailvideo.com/support/jw-player/jw-player-for-flash-v5/12535/video-delivery-rtmp-streaming#dynamicstreaming
+* http://www.longtailvideo.com/addons/plugins/123/QualityMonitor
+* http://www.longtailvideo.com/support/addons/quality-monitor/14627/quality-monitor-plugin-users-guide

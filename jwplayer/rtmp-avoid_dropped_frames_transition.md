@@ -78,15 +78,13 @@ As there is no easy way to modify the treshold, we will need to modify the sourc
     var drf:Number = 0;
 
 **Compile**:
-[list]
-[li]Desde la consola, parados en la carpeta raíz del código, ejecutamos:
-   [/li][/list][code]ant -buildfile build\build.xml[/code][list][list][/li]
-[li]Si todo sale bien, [b]tendremos una carpeta "bin-release" con el archivo "player.swf"[/b][/li]
-[li]El nuevo "player.swf" es el que usaremos para llamar a nuestro player FLASH.[/li]
-[/list]
+* From the root folder of the source code:
+    ant -buildfile build\build.xml
+* If the compiling is succesful you should have a directory named "bin-release" with the file in it "player.swf".
+
 
 [b]De un lado, el player normal. Del otro, el recompilado[/b]
-[IMG]http://i.imgur.com/CRMGc8I.jpg[/img]
+!(http://i.imgur.com/CRMGc8I.jpg)
 [i](el "width" y "bitrate" de la captura no corresponde con la guía, pero me dí cuenta después de escribir la guía; sepan disculpar :P )[/i]
 
 

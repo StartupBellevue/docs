@@ -8,15 +8,14 @@ When delivering VOD or LIVE over RTMP, the player uses three variables in order 
 * Bandwidth
 * Dropped frames (due to CPU spikes)
 
-
-Example
--------------------------
-
 Let's assume we have a LIVE broadcast with three differents qualities (streams):
 * HI (960px, 800Kbps)
 * STANDARD (680px, 400Kbps); default.
 * LOW (680px, 200Kbps)
 
+
+Basic transition logic
+-------------------------
 Supposing the player has a width of 680px, this should happen:
 * Our bandwith is enough for the STANDARD quality (default; 400Kbps) and that's what we'll get.
 * Our bandwith is not enough for the STANDARD quality (default; 400Kbps) and we'll get the LOW quality (200kbps).
@@ -34,24 +33,26 @@ Added to the transition logic described before, if in any moment more than 10fps
 
 Why is the player taking dropped frames into account?
 -------------------------
-La idea es que si tu computadora (o dispositivo) no tiene capacidad de CPU para reproducir una calidad en particular, automáticamente te muestre una inferior.
+The idea is to avoid presenting a video that cannot be supported the computer (or device) as it's does not have enough CPU performance to render it properly.
+
 
 What's wrong with this?
 -------------------------
-El problema de cómo JW maneja los "dropped frames" es que tiene umbrales de trabajo que, a mi criterio, son muy bajos y no hay manera de modificarlos (como sí se puede en [url=http://flash.flowplayer.org/plugins/streaming/bwcheck.html]FLOWPLAYER[/url]).
-Algunos motivos que te pueden hacer perder 10fps fácilmente son: 
-[list]
-[li]Una ventana emergente.[/li]
-[li]Un mensaje de MSN, GTalk, etc.[/li]
-[li]Abrir una pestaña nueva en el navegador.[/li]
-[/list]
-Si te encontrases con alguna de las situaciones antes descriptas, tendrías mínimo 20 segundos de calidad degradada.
+The problem is, in my humble opinion, that the tresholds are low and there is no way to change them (as it can be done with FLOWPLAYER: http://flash.flowplayer.org/plugins/streaming/bwcheck.html ).
 
-[b]¿Cómo solucionamos esto?[/b]
-Como decía antes, en JW Player 5 no existe manera de configurar los parámetros para la transición por pérdida de frames. Por tal motivo, lo único que podemos hacer, es recompilarlo cambiando algunas cosas en código. 
-En nuestro caso, vamos a "hacerle creer" al player que nunca se pierden frames. Obviamente, esto puede generar nuevos problemas; evalúen si se justifica o no el cambio.
+Some things that can get you to lose 10fps:
+* Popups
+* A new browser tab being opened
+* Flash Ads
+* MSN/GTalks popup windows
+* etc.
 
-[b]Manos a la obra[/b]
+Any of those things would get a degraded video experience for at least 20 seconds.
+
+Solving this
+-------------------------
+As there is no easy way to modify the treshold, we will need to modify the source code. With our modifications, JW would never be aware of dropped frames (caution: this could cause new problems, as the feature would be lost).
+
 [i]ACLARACIÓN: voy a hacer la modificación más básica, más rústica posible; Uds. pueden hacer las mejoras que se les ocurran, sobre todo si saben AS[/i].
 
 Prerequisitos:

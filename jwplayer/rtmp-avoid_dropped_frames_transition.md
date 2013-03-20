@@ -62,7 +62,7 @@ As there is no easy way to modify the treshold, we will need to modify the sourc
 
 
 **Editing**:
-* In the file "src/com/longtailvideo/jwplayer/media/RTMPMediaProvider.as", around line 214, we should find:
+In the file "src/com/longtailvideo/jwplayer/media/RTMPMediaProvider.as", around line 214, we should find:
 
     try {
     var bwd:Number = Math.round(_stream.info.maxBytesPerSecond * 8 / 1024);

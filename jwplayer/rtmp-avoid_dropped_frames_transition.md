@@ -8,27 +8,29 @@ When delivering VOD or LIVE over RTMP, the player uses three variables in order 
 * Bandwidth
 * Dropped frames (due to CPU spikes)
 
+
+Example
+-------------------------
+
 Let's assume we have a LIVE broadcast with three differents qualities (streams):
 * HI (960px, 800Kbps)
 * STANDARD (680px, 400Kbps); default.
 * LOW (680px, 200Kbps)
-
 
 Supposing the player has a width of 680px, this should happen:
 * Our bandwith is enough for the STANDARD quality (default; 400Kbps) and that's what we'll get.
 * Our bandwith is not enough for the STANDARD quality (default; 400Kbps) and we'll get the LOW quality (200kbps).
 * (HI quality is not taken into account as it is wider than the player)
 
+Supposing you use fullscreen (and your screen has more than 960px wide), this should happen:
+* Our bandwith is enough for the HI quality (800Kbps) and that's what we'll get.
+* Our bandwith is not enough for the HI (or even STANDARD) quality and we'll get a lower quality.
 
-Cuando usemos pantalla completa, si la misma tiene un ancho superior a 960px, cuando reproduzcas la transmisión pueden pasar lo siguiente:
-[list]
-[li]Que nuestro ancho de banda sea suficiente para la calidad alta (800Kbps) y se muestre la misma.[/li]
-[li]Que nuestro ancho de banda no sea suficiente para la calidad alta (o incluso la media) y se degrade a una calidad inferior.[/li]
-[/list]
 
 How are dropped frames taken into account?
 -------------------------
-Sumada a la lógica de transición comentada antes, si en algún momento se pierden más de 10fps, JW marcará la calidad ("level") como inusable ("blacklisted level 'n'") y no volverá a intentar usarlo durante unos 20 segundos.
+Added to the transition logic described before, if in any moment more than 10fps (loose) are dropped, JW will render that quality unusable ("Blacklisted level 'n'") and will not try to use it again for the next 20 seconds. 
+
 
 Why is the player taking dropped frames into account?
 -------------------------

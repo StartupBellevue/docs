@@ -53,15 +53,13 @@ Solving this
 -------------------------
 As there is no easy way to modify the treshold, we will need to modify the source code. With our modifications, JW would never be aware of dropped frames (caution: this could cause new problems, as the feature would be lost).
 
-[i]ACLARACIÓN: voy a hacer la modificación más básica, más rústica posible; Uds. pueden hacer las mejoras que se les ocurran, sobre todo si saben AS[/i].
+*DISCLAIMER: This is the simplest and most horrible way to solve this; you shoud be able to think of a better one :)*
 
-Prerequisitos:
-[list]
-[li]En mi caso, lo compilé en Xubuntu, pero se puede hacer lo mismo en Windows o Mac.[/li]
-[li] ADOBE FLEX 3.4: [url=http://sourceforge.net/adobe/flexsdk/wiki/Download%20Flex%203/]http://sourceforge.net/adobe/flexsdk/wiki/Download%20Flex%203/[/url][/li]
-[li]APACHE ANT: [url=http://ant.apache.org/bindownload.cgi]http://ant.apache.org/bindownload.cgi[/url][/li]
-[li]Código fuente de JW. En nuestro caso, vamos a usar la versión 5.10 : [url=http://developer.longtailvideo.com/trac/browser/tags/mediaplayer-5.10]http://developer.longtailvideo.com/trac/browser/tags/mediaplayer-5.10[/url][/li]
-[/list]
+Prerequisites (Xubuntu):
+* [ADOBE FLEX 3.4](http://sourceforge.net/adobe/flexsdk/wiki/Download%20Flex%203/)
+* [APACHE ANT](http://ant.apache.org/bindownload.cgi)
+* [JW Player 5.10 Source Code](http://developer.longtailvideo.com/trac/browser/tags/mediaplayer-5.10)
+
 
 EDITAMOS:
 [list]

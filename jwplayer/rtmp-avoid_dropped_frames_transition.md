@@ -83,20 +83,19 @@ As there is no easy way to modify the treshold, we will need to modify the sourc
 * If the compiling is succesful you should have a directory named "bin-release" with the file in it "player.swf".
 
 
-Side by side comparison
+Side by side comparison (L: Old; R: New)
 ------------------------
 ![side by side comparison](http://i.imgur.com/CRMGc8I.jpg)
-[i](el "width" y "bitrate" de la captura no corresponde con la guía, pero me dí cuenta después de escribir la guía; sepan disculpar :P )[/i]
+*the width and bitrate are the exact same as in the guide, but the screenshot was already taken*
 
 
-[b]NOTAS[/b]
-[list]
-[li]Es normal tener que hacer alguna modificación al código para que reconozca el path de FLEX o de ANT; varía de equipo en equipo. Si alguno le pasa, puede consultar.[/li]
-[li]Si no tienen ganas de compilar este código, lo pueden descargar de acá: [URL=http://tinyurl.com/cd66yu3]http://tinyurl.com/cd66yu3[/URL][/li]
-[li]Si mal no recuerdo haber leído en algún foro de Longtail, esta funcionalidad se iba a depreciar con JW6; pero no sé que pasó finalmente.[/li]
-[/list]
+Notes
+-----------------------------
+* It is common to have to make some changes in the code for the FLEX or ANT path; it depends on your system.
+* If you do not wan't to compile the code, you can download the SWf [here](http://tinyurl.com/cd66yu3)
+* I remember having read somwhere that this "dropped frame" transition logic would be deprecated in JW6, but im not sure.
 
-Usefull links
+Useful links
 --------------
 * http://www.longtailvideo.com/support/jw-player/jw-player-for-flash-v5/12535/video-delivery-rtmp-streaming#dynamicstreaming
 * http://www.longtailvideo.com/addons/plugins/123/QualityMonitor

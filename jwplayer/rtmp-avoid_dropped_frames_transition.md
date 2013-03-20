@@ -53,33 +53,30 @@ Solving this
 -------------------------
 As there is no easy way to modify the treshold, we will need to modify the source code. With our modifications, JW would never be aware of dropped frames (caution: this could cause new problems, as the feature would be lost).
 
-*DISCLAIMER: This is the simplest and most horrible way to solve this; you shoud be able to think of a better one :)*
+> DISCLAIMER: This is the simplest and most horrible way to solve this; you shoud be able to think of a better one :)
 
-Prerequisites (Xubuntu):
+**Prerequisites** (Xubuntu):
 * [ADOBE FLEX 3.4](http://sourceforge.net/adobe/flexsdk/wiki/Download%20Flex%203/)
 * [APACHE ANT](http://ant.apache.org/bindownload.cgi)
 * [JW Player 5.10 Source Code](http://developer.longtailvideo.com/trac/browser/tags/mediaplayer-5.10)
 
 
-EDITAMOS:
-[list]
-[li]Vamos a buscar el archivo "src/com/longtailvideo/jwplayer/media/RTMPMediaProvider.as" y aproximadamente en la línea 214 encontraremos:
-[/li][/list]
-[code]
-try {
-  var bwd:Number = Math.round(_stream.info.maxBytesPerSecond * 8 / 1024);
+**Editing**:
+* In the file "src/com/longtailvideo/jwplayer/media/RTMPMediaProvider.as", around line 214, we should find:
+	
+	try {
+	  var bwd:Number = Math.round(_stream.info.maxBytesPerSecond * 8 / 1024);
+		var drf:Number = _stream.info.droppedFrames;
+		var stt:String = state;
+
+* Replace this:
+
 	var drf:Number = _stream.info.droppedFrames;
-	var stt:String = state;
-  [/code]
-[list]
-  [li]Reemplazaremos :[/li][/list]
-[code]
-  var drf:Number = _stream.info.droppedFrames;
-  [/code]
-  por 
-  [code]
-  var drf:Number = 0;
-  [/code]
+
+* For this:
+	
+	var drf:Number = 0;
+
   [i]Insisto en que esta es una solución muy rústica, porque lo que hacemos transformar esa variable en una constante. Seguramente a Uds. se les pueden ocurrir mejores maneras de lidiar con este problema[/i] :)
 
 

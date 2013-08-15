@@ -8,9 +8,7 @@ This is a very simple example on how to analyze which users are "playing" videos
 The GA code
 -----------
 
-* Get an GA account and its code (you can skip this, if you already are using it)
-
-
+Get an GA account and its code (you can skip this, if you already are using it)
 
 	<script type="text/javascript">
 
@@ -27,11 +25,13 @@ The GA code
 	  })();
 
 	</script>
+	
+
 
 Using the JW API and pushing to GA
 ----------------------------------
 
-This is our code, where we set an interval of 60 seconds for a loop hat checks if JW Player is in "PLAYING" state. If so, a event and a pageview are pushed to GA (you can customize this in any way you like
+This is our code, where we set an interval of 60 seconds for a loop hat checks if JW Player is in "PLAYING" state. If so, a event and a pageview are pushed to GA (you can customize this in any way you like).
 
 	<script type="text/javascript">
 		setInterval(
@@ -44,3 +44,21 @@ This is our code, where we set an interval of 60 seconds for a loop hat checks i
 		,60000);
 
 	</script>
+	
+
+Using GA Realtime
+-----------------
+
+In your GA panel you should see something like this
+
+![](http://i.imgur.com/DHN8Lsh.png)
+![](http://i.imgur.com/reBlgIk.png)
+
+
+Reference
+---------
+
+* http://www.longtailvideo.com/support/jw-player/28851/javascript-api-reference/
+* https://developers.google.com/analytics/devguides/collection/analyticsjs/
+
+ 

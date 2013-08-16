@@ -1,4 +1,4 @@
-Realtime analitycs using Google Analitycs
+Realtime analytics using Google Analytics
 =========================================
 
 JW has an API that allows you to have many actions in response to the player events. Google analytics also provides a great API, is probably the best and least expensive (it's free!) of tracking this events.

@@ -11,6 +11,7 @@ My workaround: installing Varnish as a proxy for port 80 and HLS (RTMP and RTSP 
 1. Install Varnish and set it to use port 80.
 
 2. Enable Wowza HLS over port 8080 (or other) in "conf/VHost.xml":
+
 	<Root>
 	        <VHost>
 	                <HostPortList>
@@ -30,13 +31,11 @@ My workaround: installing Varnish as a proxy for port 80 and HLS (RTMP and RTSP 
 	  .host = "127.0.0.1";
 	  .port = "8080";
 	}
-	
 	acl mynetworks
 	{
 	        "localhost";
 		"xxx.xxx.xxx.xxxx"/xx; 
 	}
-	
 	sub vcl_recv {
 	
 		if (

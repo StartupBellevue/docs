@@ -8,8 +8,8 @@ After contacting Wowza support, the only solution we were offered was that we de
 
 My workaround: installing Varnish as a proxy for port 80 and HLS (RTMP and RTSP wouldn't be affected as they use other ports).
 
-. Install Varnish and set it to use port 80.
-. Enable Wowza HLS over port 8080 (or other) in "conf/VHost.xml":
+* Install Varnish and set it to use port 80.
+* Enable Wowza HLS over port 8080 (or other) in "conf/VHost.xml":
 ```xml
 	<Root>
 		<VHost>
@@ -23,7 +23,7 @@ My workaround: installing Varnish as a proxy for port 80 and HLS (RTMP and RTSP 
 	                                <!--<Port>80,554,1935</Port>-->
 	                                <Port>8080,554,1935</Port>
 ```
-. Create a VCL with rules similar to this (adjust according to your configuration):
+* Create a VCL with rules similar to this (adjust according to your configuration):
 ```vcl
 	backend default {
 	  .host = "127.0.0.1";

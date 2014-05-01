@@ -1,4 +1,5 @@
 Wowza + Varnish: Blocking HLS for non mobile devices
+----------------------------------------------------
 
 I had a situation where some sites stole a live streaming by using HLS using a Flash video player (like JW6) published in other sites. That live stream was served to desktop players with RTMP and HLS was only used by IOS. RTMP couldn't be stole "Domain Lock" control was implemented.
 

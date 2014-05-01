@@ -11,7 +11,6 @@ My workaround: installing Varnish as a proxy for port 80 and HLS (RTMP and RTSP 
 1. Install Varnish and set it to use port 80.
 
 2. Enable Wowza HLS over port 8080 (or other) in "conf/VHost.xml":
-
 ```xml
 	<Root>
 		<VHost>
@@ -27,7 +26,7 @@ My workaround: installing Varnish as a proxy for port 80 and HLS (RTMP and RTSP 
 ```
 
 3. Create a VCL with rules similar to this (adjust according to your configuration):
-
+```javascript
 	backend default {
 	  .host = "127.0.0.1";
 	  .port = "8080";
@@ -74,4 +73,4 @@ My workaround: installing Varnish as a proxy for port 80 and HLS (RTMP and RTSP 
 		error 403 "Forbidden";
 	
 	}
-
+```

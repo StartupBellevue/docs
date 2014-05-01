@@ -26,7 +26,7 @@ My workaround: installing Varnish as a proxy for port 80 and HLS (RTMP and RTSP 
 ```
 
 3. Create a VCL with rules similar to this (adjust according to your configuration):
-```javascript
+```vcl
 	backend default {
 	  .host = "127.0.0.1";
 	  .port = "8080";

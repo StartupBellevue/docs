@@ -57,7 +57,8 @@ My workaround: installing Varnish as a proxy for port 80 and HLS (RTMP and RTSP 
 				# Is this coming from one my sites?
 				req.http.referer ~ "(mysite1.com|mysite2.com)"		
 	
-				# Does it have an empty referer? This could be to an IOS player doing a GET over the stream URL, and that's fine for us.
+				# Does it have an empty referer? This could be to an IOS player doing a GET over 
+				# the stream URL, and that's fine for us.
 				|| req.http.referer ~ "^$"
 			)
 			{
@@ -74,3 +75,6 @@ My workaround: installing Varnish as a proxy for port 80 and HLS (RTMP and RTSP 
 	
 	}
 ```
+
+Hope this helps :)
+
